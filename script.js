@@ -3,18 +3,33 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('places-container');
-            data.forEach(place => {
-                const card = document.createElement('div');
-                card.className = 'place-card';
-                card.innerHTML = `
-                    <h2>${place.name}</h2>
-                    <p><strong>المحافظة:</strong> ${place.governorate}</p>
-                    <p><strong>الوصف:</strong> ${place.desc}</p>
-                    <p><strong>التاريخ:</strong> ${place.history}</p>
-                    <p><strong>الأصل:</strong> ${place.origin}</p>
-                `;
-                container.appendChild(card);
+            const filterSelect = document.getElementById('filter');
+
+            function displayPlaces(places) {
+                container.innerHTML = '';
+                places.forEach(place => {
+                    const card = document.createElement('div');
+                    card.className = 'place-card';
+                    card.innerHTML = `
+                        <h2>${place.name}</h2>
+                        <p><strong>المحافظة:</strong> ${place.governorate}</p>
+                        <p><strong>التصنيف:</strong> ${place.category}</p>
+                        <p><strong>الوصف:</strong> ${place.desc}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            displayPlaces(data);
+
+            filterSelect.addEventListener('change', (e) => {
+                const selectedGov = e.target.value;
+                if (selectedGov === 'all') {
+                    displayPlaces(data);
+                } else {
+                    const filtered = data.filter(p => p.governorate === selectedGov);
+                    displayPlaces(filtered);
+                }
             });
-        })
-        .catch(error => console.error('خطأ في تحميل البيانات:', error));
+        });
 });

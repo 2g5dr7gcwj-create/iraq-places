@@ -2,17 +2,34 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معالم العراق التاريخية</title>
+    <title>موسوعة الأماكن العراقية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>دليل أماكن العراق التاريخية</h1>
-    </header>
+    <h1>موسوعة الأماكن التراثية في العراق</h1>
     
-    <main id="places-container">
-        </main>
+    <select id="filter">
+        <option value="all">كل المحافظات</option>
+        <option value="بغداد">بغداد</option>
+        <option value="نينوى">نينوى</option>
+        <option value="البصرة">البصرة</option>
+        <option value="أربيل">أربيل</option>
+        <option value="السليمانية">السليمانية</option>
+        <option value="دهوك">دهوك</option>
+        <option value="كركوك">كركوك</option>
+        <option value="بابل">بابل</option>
+        <option value="النجف">النجف</option>
+        <option value="كربلاء">كربلاء</option>
+        <option value="الأنبار">الأنبار</option>
+        <option value="ديالى">ديالى</option>
+        <option value="ميسان">ميسان</option>
+        <option value="صلاح الدين">صلاح الدين</option>
+        <option value="ذي قار">ذي قار</option>
+        <option value="المثنى">المثنى</option>
+        <option value="القادسية">القادسية</option>
+    </select>
+
+    <div id="places-container"></div>
 
     <script src="script.js"></script>
 </body>

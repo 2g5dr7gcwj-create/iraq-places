@@ -1,10 +1,42 @@
-body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; text-align: center; }
+/* الإعدادات الأساسية */
+body { 
+    font-family: 'Arial', sans-serif; 
+    background-color: #f4f4f4; 
+    margin: 0; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+/* تنسيق العنوان */
 header { margin-bottom: 30px; color: #333; }
-#places-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.place-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.place-card h2 { color: #d35400; }
-.place-card p { color: #555; line-height: 1.6; }
-body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
-#places-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-.place-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-#filter { padding: 10px; font-size: 16px; margin-bottom: 20px; }
+
+/* تنسيق قائمة الفلترة */
+#filter { 
+    padding: 10px; 
+    font-size: 16px; 
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* حاوية الأماكن (Grid System) */
+#places-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+/* تنسيق بطاقة المكان */
+.place-card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    transition: transform 0.2s;
+}
+
+.place-card:hover { transform: translateY(-5px); } /* إضافة لمسة تفاعلية عند مرور الماوس */
+
+.place-card h2 { color: #d35400; margin-top: 0; }
+.place-card p { color: #555; line-height: 1.6; margin: 10px 0; }
